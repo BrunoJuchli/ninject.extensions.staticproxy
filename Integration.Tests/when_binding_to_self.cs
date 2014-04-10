@@ -20,6 +20,8 @@
                     .InSingletonScope();
 
                 Mock<IDynamicInterceptor> interceptorMock = kernel.Get<ForwardToMockInterceptor>().Mock;
+                interceptorMock.Setup(x => x.Intercept(It.IsAny<IInvocation>()))
+                    .Callback<IInvocation>(invocation => invocation.Proceed());
                 var proxy = kernel.Get<InterceptedTarget>();
 
                 proxy.Foo();

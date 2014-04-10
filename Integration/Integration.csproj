@@ -39,8 +39,9 @@
     <Content Include="FodyWeavers.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IInterceptedTarget.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SomeClass.cs" />
+    <Compile Include="InterceptedTarget.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

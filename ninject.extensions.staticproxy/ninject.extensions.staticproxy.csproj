@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="BindingExtensions.cs" />
     <Compile Include="DynamicInterceptorCollection.cs" />
+    <Compile Include="DynamicInterceptorCollectionProvider.cs" />
     <Compile Include="IInterceptorBindingSyntax.cs" />
     <Compile Include="InterceptorBindingSyntax.cs" />
     <Compile Include="IPerInstanceInterceptorContainer.cs" />

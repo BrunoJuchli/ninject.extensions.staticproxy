@@ -58,6 +58,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ninject.extensions.staticproxy\ninject.extensions.staticproxy.csproj">
+      <Project>{6fcbbbfe-3ce4-48e4-ba99-075a5dcdaa12}</Project>
+      <Name>ninject.extensions.staticproxy</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

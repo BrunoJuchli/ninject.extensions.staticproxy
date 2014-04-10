@@ -1,0 +1,12 @@
+﻿namespace Ninject.Extensions.StaticProxy
+{
+    using Ninject.Modules;
+
+    public class StaticProxyModule : NinjectModule
+    {
+        public override void Load()
+        {
+            this.Bind<IDynamicInterceptorManager>().To<DynamicInterceptorManager>();
+        }
+    }
+}

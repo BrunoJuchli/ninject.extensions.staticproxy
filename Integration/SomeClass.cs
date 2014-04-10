@@ -1,4 +1,4 @@
-﻿namespace IntegrationTests
+﻿namespace Integration
 {
     [StaticProxy]
     public class SomeClass

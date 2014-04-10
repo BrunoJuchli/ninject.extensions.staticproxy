@@ -1,10 +1,9 @@
 ﻿namespace Ninject.Extensions.StaticProxy
 {
-
-    internal class PerInstanceInterceptorContainer<TTargetInterface, TInterceptor> : IPerInstanceInterceptorContainer<TTargetInterface>
+    internal class OnActivationInterceptorInstanciatingContainer<TTargetInterface, TInterceptor> : IPerInstanceInterceptorContainer<TTargetInterface>
         where TInterceptor : IDynamicInterceptor
     {
-        public PerInstanceInterceptorContainer(TInterceptor interceptor)
+        public OnActivationInterceptorInstanciatingContainer(TInterceptor interceptor)
         {
             this.Interceptor = interceptor;
 

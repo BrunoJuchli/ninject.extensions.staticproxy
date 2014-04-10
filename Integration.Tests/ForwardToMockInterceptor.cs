@@ -7,6 +7,9 @@
         public ForwardToMockInterceptor()
         {
             this.Mock = new Mock<IDynamicInterceptor>();
+            this.Mock
+                .Setup(x => x.Intercept(It.IsAny<IInvocation>()))
+                .Callback<IInvocation>(invocation => invocation.Proceed());
         }
 
         public Mock<IDynamicInterceptor> Mock { get; private set; }

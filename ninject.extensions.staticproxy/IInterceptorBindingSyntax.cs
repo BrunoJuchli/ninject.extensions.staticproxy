@@ -7,5 +7,9 @@
 
         IInterceptorBindingSyntax By<TInterceptor>(int order)
             where TInterceptor : IDynamicInterceptor;
+
+        IInterceptorBindingSyntax By(IDynamicInterceptor interceptor);
+
+        IInterceptorBindingSyntax By(IDynamicInterceptor interceptor, int order);
     }
 }

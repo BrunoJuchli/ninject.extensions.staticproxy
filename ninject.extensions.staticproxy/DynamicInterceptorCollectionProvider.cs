@@ -14,6 +14,8 @@
             // ParentRequest.ParentRequest is for proxy
             Type proxyType = context.Request.ParentRequest.ParentRequest.Service;
 
+            // todo: this is the interface type, not the implementation type! but binding is done on interface type :/
+            // investigate how this would work with advice?!
             Type concreteCollectionType = InterceptionCollectionType.MakeGenericType(proxyType);
 
             return (IDynamicInterceptorCollection)context.Kernel.Get(concreteCollectionType);

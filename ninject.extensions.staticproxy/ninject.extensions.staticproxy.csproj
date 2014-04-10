@@ -40,12 +40,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BindingExtensions.cs" />
+    <Compile Include="ConstantInterceptorContainer.cs" />
     <Compile Include="DynamicInterceptorCollection.cs" />
     <Compile Include="DynamicInterceptorCollectionProvider.cs" />
     <Compile Include="IInterceptorBindingSyntax.cs" />
     <Compile Include="InterceptorBindingSyntax.cs" />
     <Compile Include="IPerInstanceInterceptorContainer.cs" />
-    <Compile Include="PerInstanceInterceptorContainer.cs" />
+    <Compile Include="OnActivationInterceptorInstanciatingContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StaticProxyModule.cs" />
   </ItemGroup>

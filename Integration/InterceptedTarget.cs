@@ -9,5 +9,9 @@
         {
             return this.FooReturnValue;
         }
+
+        public void Bar()
+        {  
+        }
     }
 }

@@ -8,8 +8,6 @@
         {
             this.Bind<IDynamicInterceptorManager>().To<DynamicInterceptorManager>();
             this.Bind<IDynamicInterceptorCollection>().ToProvider<DynamicInterceptorCollectionProvider>();
-
-            this.Bind(typeof(DynamicInterceptorCollection<>)).ToSelf();
         }
     }
 }

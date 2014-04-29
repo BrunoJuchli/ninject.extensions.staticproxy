@@ -1,25 +1,47 @@
 ﻿namespace Ninject.Extensions.StaticProxy
 {
     using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Linq;
+
     using Ninject.Activation;
 
     internal class DynamicInterceptorCollectionProvider : Provider<IDynamicInterceptorCollection>
     {
-        private static readonly Type InterceptionCollectionType = typeof(DynamicInterceptorCollection<>);
-
         protected override IDynamicInterceptorCollection CreateInstance(IContext context)
         {
-            // Request is for IDynamicInterceptorCollection
-            // ParentRequest ist for IDynamicInterceptorManager
-            // ParentRequest.ParentRequest is for proxy
-            Type proxyType = context.Request.ParentRequest.ParentRequest.Service;
+            DynamicInterceptorParameter parameter =
+                context.Request.ParentRequest.ParentContext.Parameters.OfType<DynamicInterceptorParameter>()
+                    .SingleOrDefault();
 
-            // todo: this is the interface type, not the implementation type! but binding is done on interface type :/
-            // investigate how this would work with advice?!
-            Type concreteCollectionType = InterceptionCollectionType.MakeGenericType(proxyType);
+            if (parameter == null)
+            {
+                throw new InvalidOperationException("Make sure to use interceptor syntax on interceptor binding");
+            }
 
-            return (IDynamicInterceptorCollection)context.Kernel.Get(concreteCollectionType);
+            IEnumerable<IDynamicInterceptor> interceptors = parameter.GetValue(context);
+            return new InterceptorsCollection(interceptors);
+        }
 
+        private class InterceptorsCollection : IDynamicInterceptorCollection
+        {
+            private readonly IEnumerable<IDynamicInterceptor> enumerable;
+
+            public InterceptorsCollection(IEnumerable<IDynamicInterceptor> enumerable)
+            {
+                this.enumerable = enumerable;
+            }
+
+            public IEnumerator<IDynamicInterceptor> GetEnumerator()
+            {
+                return this.enumerable.GetEnumerator();
+            }
+
+            IEnumerator IEnumerable.GetEnumerator()
+            {
+                return this.GetEnumerator();
+            }
         }
     }
 }

@@ -61,6 +61,7 @@
   <ItemGroup>
     <Compile Include="ForwardToMockInterceptor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="when_binding_interface_to_implementation.cs" />
     <Compile Include="when_binding_to_self.cs" />
     <Compile Include="when_there_are_multiple_interceptors_for_proxy.cs" />
     <Compile Include="when_there_is_no_interceptor_for_proxy.cs" />

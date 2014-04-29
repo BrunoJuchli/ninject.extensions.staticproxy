@@ -12,21 +12,21 @@
         public void MustUseInterceptorsInCorrectOrder()
         {
             var interceptionCallLog = new List<IDynamicInterceptor>();
-            var interceptor1 = new TraceInterceptor(interceptionCallLog);
-            var interceptor2 = new TraceInterceptor(interceptionCallLog);
-            var interceptor3 = new TraceInterceptor(interceptionCallLog);
+            var interceptor1 = new TraceInterceptor(interceptionCallLog, "1");
+            var interceptor2 = new TraceInterceptor(interceptionCallLog, "2");
+            var interceptor3 = new TraceInterceptor(interceptionCallLog, "3");
 
             using (var kernel = new StandardKernel())
             {
-                kernel.Bind<IInterceptedTarget>().To<InterceptedTarget>()
+                kernel.Bind<InterceptedTarget>().ToSelf()
                     .Intercept(x => x
                         .By(interceptor1, 10)
                         .By(interceptor2, 5)
                         .By(interceptor3, 15));
 
-                var proxy = kernel.Get<IInterceptedTarget>();
+                var proxy = kernel.Get<InterceptedTarget>();
 
-                proxy.Foo();
+                proxy.Bar();
 
                 interceptionCallLog.Should()
                     .ContainInOrder(interceptor2, interceptor1, interceptor3)
@@ -38,9 +38,12 @@
         {
             private readonly ICollection<IDynamicInterceptor> interceptorCallLog;
 
-            public TraceInterceptor(ICollection<IDynamicInterceptor> interceptorCallLog)
+            private readonly string name;
+
+            public TraceInterceptor(ICollection<IDynamicInterceptor> interceptorCallLog, string name)
             {
                 this.interceptorCallLog = interceptorCallLog;
+                this.name = name;
             }
 
             public void Intercept(IInvocation invocation)
@@ -48,6 +51,11 @@
                 this.interceptorCallLog.Add(this);
 
                 invocation.Proceed();
+            }
+
+            public override string ToString()
+            {
+                return this.name;
             }
         }
     }

@@ -14,12 +14,12 @@
     <copyright>Copyright Bruno Juchli 2014</copyright>
     <tags>Proxy ILWeaving Fody AOP</tags>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+	<dependencies>
+		<dependency id="Portable.Ninject" version="3.2"/>
+		<dependency id="StaticProxy.Interceptor" version="0.0.1"/>
+	</dependencies>
   </metadata>
   <files>
     <file src="bin\$configuration$\$id$.pdb" target="lib\portable-win+net40+sl50+wp80\" />
   </files>
-  <dependencies>
-	<dependency id="Portable.Ninject" version="3.2"/>
-	<dependency id="StaticProxy.Interceptor" version="0.0.1"/>
-  </dependencies>
 </package>

@@ -23,12 +23,10 @@ Future Features:
  - create / adjust the binding
 
 
-    IBindingRoot
-      .Bind<IFoo>()
-      .To<Foo>()
-        .Intercept(x => x
-          .By<LogInterceptor>()
-          .By<ExceptionWrappingInterceptor>());
+        IBindingRoot.Bind<IFoo>().To<Foo>()
+            .Intercept(x => x
+                .By<LogInterceptor>()
+                .By<ExceptionWrappingInterceptor>());
  
 ## Icon
 

@@ -7,7 +7,7 @@
 Proxying for platforms which don't support dynamic code emitting (WinRT, Windows Phone, IPhone...). Based on (StaticProxy.Fody)[https://github.com/BrunoJuchli/StaticProxy.Fody/]
 
 Future Features:
- - .ToFactory() binding for auto-implemented factories (as known from Ninject.Extensions.Factory).
+ - `.ToFactory()` binding for auto-implemented factories (as known from Ninject.Extensions.Factory).
 
 ## Usage
 
@@ -18,7 +18,7 @@ Future Features:
 
 ### Configuring Interception
 
- - put a [StaticProxy] attribute on the class 
+ - put a `[StaticProxy]` attribute on the class 
  - Write some interceptors (`FooInterceptor : IDynamicInterceptor`) - this is almost idential to Castle Dynamic Proxy Interceptors.
  - create / adjust the binding
 

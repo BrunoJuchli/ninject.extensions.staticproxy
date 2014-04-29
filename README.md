@@ -9,6 +9,14 @@ Proxying for platforms which don't support dynamic code emitting (WinRT, Windows
 Future Features:
  - `.ToFactory()` binding for auto-implemented factories (as known from Ninject.Extensions.Factory).
 
+## Nuget
+
+Nuget package http://nuget.org/packages/Ninject.Extensions.StaticProxy
+
+To Install the static proxy weaver from the Nuget Package Manager Console 
+    
+    PM> Install-Package Ninject.Extensions.StaticProxy
+
 ## Usage
 
 ### Setup

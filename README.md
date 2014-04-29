@@ -4,7 +4,7 @@
 ![Icon](https://raw.github.com/BrunoJuchli/StaticProxy/master/Icons/package_icon.png) Ninject.Extensions.StaticProxy
 ==============================
 
-Proxying for platforms which don't support dynamic code emitting (WinRT, Windows Phone, IPhone...). Based on (StaticProxy.Fody)[https://github.com/BrunoJuchli/StaticProxy.Fody/]
+Proxying for platforms which don't support dynamic code emitting (WinRT, Windows Phone, IPhone...). Based on [StaticProxy.Fody](https://github.com/BrunoJuchli/StaticProxy.Fody/)
 
 Future Features:
  - `.ToFactory()` binding for auto-implemented factories (as known from Ninject.Extensions.Factory).

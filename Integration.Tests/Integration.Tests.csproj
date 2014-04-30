@@ -48,8 +48,9 @@
     <Reference Include="Ninject.Platform">
       <HintPath>..\packages\Portable.Ninject.3.2\lib\net40-client\Ninject.Platform.dll</HintPath>
     </Reference>
-    <Reference Include="StaticProxy.Interceptor">
-      <HintPath>..\packages\StaticProxy.Interceptor.0.0.1-beta3\lib\portable-win+net40+sl50+wp80\StaticProxy.Interceptor.dll</HintPath>
+    <Reference Include="StaticProxy.Interceptor, Version=0.0.0.26, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\StaticProxy.Interceptor.0.1.0-beta2\lib\portable-win+net40+sl50+wp80\StaticProxy.Interceptor.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

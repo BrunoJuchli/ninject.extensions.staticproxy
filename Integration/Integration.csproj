@@ -36,7 +36,9 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
-    <Content Include="FodyWeavers.xml" />
+    <Content Include="FodyWeavers.xml">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IInterceptedTarget.cs" />
@@ -48,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="StaticProxy.Interceptor">
-      <HintPath>..\packages\StaticProxy.Interceptor.0.0.1-beta3\lib\portable-win+net40+sl50+wp80\StaticProxy.Interceptor.dll</HintPath>
+      <HintPath>..\packages\StaticProxy.Interceptor.0.1.0-beta2\lib\portable-win+net40+sl50+wp80\StaticProxy.Interceptor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

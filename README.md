@@ -1,10 +1,10 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/w4g31pqr4yi7i9ok)](https://ci.appveyor.com/project/BrunoJuchli/ninject-extensions-staticproxy)
 
 
-![Icon](https://raw.github.com/BrunoJuchli/StaticProxy/master/Icons/package_icon.png) Ninject.Extensions.StaticProxy
+![Icon](https://raw.github.com/BrunoJuchli/ninject.extensions.staticproxy/master/Icons/package_icon.png) Ninject.Extensions.StaticProxy
 ==============================
 
-Proxying for platforms which don't support dynamic code emitting (WinRT, Windows Phone, IPhone...). Based on [StaticProxy.Fody](https://github.com/BrunoJuchli/StaticProxy.Fody/)
+Proxying for platforms which don't support dynamic code emitting (Windows Store Applications, Xamarin.iOS...). Based on [StaticProxy.Fody](https://github.com/BrunoJuchli/StaticProxy.Fody/)
 
 Future Features:
  - `.ToFactory()` binding for auto-implemented factories (as known from Ninject.Extensions.Factory).

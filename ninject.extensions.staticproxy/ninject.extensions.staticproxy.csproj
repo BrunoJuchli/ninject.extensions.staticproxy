@@ -49,7 +49,9 @@
     <Compile Include="StaticProxyModule.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ninject.extensions.staticproxy.nuspec" />
+    <None Include="ninject.extensions.staticproxy.nuspec">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -57,7 +59,8 @@
       <HintPath>..\packages\Portable.Ninject.3.2\lib\portable-net4+sl5+wp8+win8\Ninject.Common.dll</HintPath>
     </Reference>
     <Reference Include="StaticProxy.Interceptor">
-      <HintPath>..\packages\StaticProxy.Interceptor.0.1.0-beta3\lib\portable-win+net40+sl50+wp80\StaticProxy.Interceptor.dll</HintPath>
+      <HintPath>..\packages\StaticProxy.Interceptor.0.2.0\lib\portable-win+net40+sl50+wp80\StaticProxy.Interceptor.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

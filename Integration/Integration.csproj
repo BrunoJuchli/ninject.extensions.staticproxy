@@ -52,10 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="StaticProxy.Interceptor">
-      <HintPath>..\packages\StaticProxy.Interceptor.0.1.0-beta3\lib\portable-win+net40+sl50+wp80\StaticProxy.Interceptor.dll</HintPath>
+      <HintPath>..\packages\StaticProxy.Interceptor.0.2.0\lib\portable-win+net40+sl50+wp80\StaticProxy.Interceptor.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

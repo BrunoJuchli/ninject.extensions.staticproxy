@@ -36,10 +36,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .NET Framework is automatically included -->
-    <Content Include="FodyWeavers.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="BindingExtensions.cs" />
     <Compile Include="InterceptorContainer\ConstantInterceptorContainer.cs" />
     <Compile Include="DynamicInterceptorCollectionProvider.cs" />

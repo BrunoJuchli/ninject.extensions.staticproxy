@@ -1,4 +1,4 @@
-﻿namespace Integration
+﻿namespace Integration.ClassProxy
 {
     [StaticProxy]
     public class InterceptedTarget : IInterceptedTarget

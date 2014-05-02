@@ -3,21 +3,22 @@
   <metadata minClientVersion="2.8">
     <id>Ninject.Extensions.StaticProxy</id>
     <!-- <version>$version$</version> currently does not seem to work with PCL assemblies... -->
-	<version>0.1.0-beta1</version>
-	<title>Ninject.Extensions.StaticProxy</title>
+	  <version>0.1.0-beta1</version>
+	  <title>Ninject.Extensions.StaticProxy</title>
     <authors>Bruno Juchli</authors>
     <owners>Bruno Juchli</owners>
-	<developmentDependency>false</developmentDependency>
-	<iconUrl>https://github.com/BrunoJuchli/ninject.extensions.staticproxy/tree/master/Icons/package_icon.png</iconUrl> 
+	  <developmentDependency>false</developmentDependency>
+	  <iconUrl>https://github.com/BrunoJuchli/ninject.extensions.staticproxy/tree/master/Icons/package_icon.png</iconUrl> 
     <projectUrl>https://github.com/BrunoJuchli/ninject.extensions.staticproxy</projectUrl>
-	<description>Ninject extension for using StaticProxy.Fody with ninject. This enables proxying on platforms which don't support Dynamic Proxy (like Windows RT, Apple IPhone,...)</description>
+	  <description>Ninject extension for using StaticProxy.Fody with ninject. This enables proxying on platforms which don't support Dynamic Proxy (like Windows RT, Apple IPhone,...)</description>
     <copyright>Copyright Bruno Juchli 2014</copyright>
     <tags>Proxy ILWeaving Fody AOP</tags>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-	<dependencies>
-		<dependency id="Portable.Ninject" version="3.2"/>
-		<dependency id="StaticProxy.Interceptor" version="0.0.1"/>
-	</dependencies>
+	  <dependencies>
+		  <dependency id="Portable.Ninject" version="3.2"/>
+		  <dependency id="StaticProxy.Interceptor" version="0.2.0-beta1"/>
+      <dependency id="StaticProxy.Fody" version ="0.2.0-beta1"/>
+	  </dependencies>
   </metadata>
   <files>
     <file src="bin\$configuration$\$id$.pdb" target="lib\portable-win+net40+sl50+wp80\" />

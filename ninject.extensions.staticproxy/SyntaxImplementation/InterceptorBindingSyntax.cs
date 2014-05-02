@@ -1,5 +1,6 @@
 ﻿namespace Ninject.Extensions.StaticProxy.SyntaxImplementation
 {
+    using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Linq;
@@ -32,6 +33,11 @@
 
         public IInterceptorBindingSyntax By(IDynamicInterceptor interceptor, int order)
         {
+            if (interceptor == null)
+            {
+                throw new ArgumentNullException("interceptor");
+            }
+
             this.interceptors.Add(new ConstantInterceptorContainer(order, interceptor));
             return this;
         }

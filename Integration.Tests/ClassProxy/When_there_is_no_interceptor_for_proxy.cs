@@ -1,12 +1,15 @@
-﻿namespace Integration.Tests
+﻿namespace Integration.Tests.ClassProxy
 {
     using FluentAssertions;
+
+    using Integration.ClassProxy;
+
     using Ninject;
     using Ninject.Extensions.StaticProxy;
 
     using Xunit;
 
-    public class when_there_is_no_interceptor_for_proxy
+    public class When_there_is_no_interceptor_for_proxy
     {
         [Fact]
         public void Must_execute_original_method()

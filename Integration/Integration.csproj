@@ -41,18 +41,21 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IInterceptedTarget.cs" />
+    <Compile Include="ClassProxy\IInterceptedTarget.cs" />
+    <Compile Include="InterfaceProxy\INoProxy.cs" />
+    <Compile Include="InterfaceProxy\IProxy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="InterceptedTarget.cs" />
+    <Compile Include="ClassProxy\InterceptedTarget.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="StaticProxy.Interceptor">
-      <HintPath>..\packages\StaticProxy.Interceptor.0.1.0-beta2\lib\portable-win+net40+sl50+wp80\StaticProxy.Interceptor.dll</HintPath>
+      <HintPath>..\packages\StaticProxy.Interceptor.0.1.0-beta3\lib\portable-win+net40+sl50+wp80\StaticProxy.Interceptor.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

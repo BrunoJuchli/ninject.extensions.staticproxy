@@ -1,12 +1,17 @@
-﻿namespace Integration.Tests
+﻿namespace Integration.Tests.ClassProxy
 {
     using System.Collections.Generic;
+
     using FluentAssertions;
+
+    using Integration.ClassProxy;
+
     using Ninject;
     using Ninject.Extensions.StaticProxy;
+
     using Xunit;
 
-    public class when_there_are_multiple_interceptors_for_proxy
+    public class When_there_are_multiple_interceptors_for_proxy
     {
         [Fact]
         public void MustUseInterceptorsInCorrectOrder()
@@ -31,31 +36,6 @@
                 interceptionCallLog.Should()
                     .ContainInOrder(interceptor2, interceptor1, interceptor3)
                     .And.HaveCount(3);
-            }
-        }
-
-        private class TraceInterceptor : IDynamicInterceptor
-        {
-            private readonly ICollection<IDynamicInterceptor> interceptorCallLog;
-
-            private readonly string name;
-
-            public TraceInterceptor(ICollection<IDynamicInterceptor> interceptorCallLog, string name)
-            {
-                this.interceptorCallLog = interceptorCallLog;
-                this.name = name;
-            }
-
-            public void Intercept(IInvocation invocation)
-            {
-                this.interceptorCallLog.Add(this);
-
-                invocation.Proceed();
-            }
-
-            public override string ToString()
-            {
-                return this.name;
             }
         }
     }

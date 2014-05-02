@@ -1,11 +1,15 @@
-﻿namespace Integration.Tests
+﻿namespace Integration.Tests.ClassProxy
 {
+    using Integration.ClassProxy;
+
     using Moq;
+
     using Ninject;
     using Ninject.Extensions.StaticProxy;
+
     using Xunit;
 
-    public class when_binding_to_self
+    public class When_binding_to_self
     {
         [Fact]
         public void Must_use_interceptor()

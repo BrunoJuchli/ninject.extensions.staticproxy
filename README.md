@@ -20,13 +20,14 @@ To Install the static proxy weaver from the Nuget Package Manager Console
 ## Usage
 
 ### Setup
- - install the nuget package
- - install StaticProxy.Fody in every project where types should be proxied
- - install StaticProxy.Interceptor in every project where you want to write interceptors.
+ - install the nuget package in the application project
+ - install nuget package StaticProxy.Fody in every project where types should be proxied
+ - install nuget package StaticProxy.Interceptor in every project where you want to write interceptors.
 
-### Configuring Interception
+### Configuring Class Proxy Interception
+this is similar to castle dynamic proxy's "class proxy" and "interface proxy with target" proxy types.
 
- - put a `[StaticProxy]` attribute on the class 
+ - put a `[StaticProxy]` attribute on the class
  - Write some interceptors (`FooInterceptor : IDynamicInterceptor`) - this is almost idential to Castle Dynamic Proxy Interceptors.
  - create / adjust the binding
 
@@ -35,6 +36,19 @@ To Install the static proxy weaver from the Nuget Package Manager Console
             .Intercept(x => x
                 .By<LogInterceptor>()
                 .By<ExceptionWrappingInterceptor>());
+                
+
+### Configuring Interface Proxy Interception
+this is similar to castle dynamic proxy's "interface proxy without target" proxy type. Requires at least one interceptor!
+
+ - put a `[StaticProxy]` attribute on the interface
+ - Write some interceptors (`FooInterceptor : IDynamicInterceptor`) - this is almost idential to Castle Dynamic Proxy Interceptors.
+ - create / adjust the binding
+
+
+        IBindingRoot.Bind<IFoo>().ToProxy(x => x
+                .By<FooImplementationInterceptor>();
+                
  
 ## Icon
 

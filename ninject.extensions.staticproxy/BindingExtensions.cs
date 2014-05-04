@@ -26,7 +26,7 @@
             var interfaceType = typeof(T);
             EnsureTypeIsInterface(interfaceType);
 
-            Type proxyType = RetrieveProxyType<T>(interfaceType);
+            Type proxyType = RetrieveProxyType(interfaceType);
 
             return syntax.To(proxyType).Intercept(configure);
         }
@@ -44,10 +44,10 @@ If you want to intercept a class proxy, use `.Bind<IFoo>().To<Foo>().Intercept(.
             }
         }
 
-        private static Type RetrieveProxyType<T>(Type interfaceType) where T : class
+        private static Type RetrieveProxyType(Type interfaceType)
         {
             string proxyTypeName = string.Concat(interfaceType.FullName, InterfaceImplementationSuffix);
-            Type proxyType = typeof(T).Assembly.GetType(proxyTypeName);
+            Type proxyType = interfaceType.Assembly.GetType(proxyTypeName);
             if (proxyType == null)
             {
                 string message = string.Format(

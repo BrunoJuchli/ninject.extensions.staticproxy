@@ -1,4 +1,4 @@
-﻿namespace Integration.Tests.ClassProxy
+﻿namespace Integration.ClassProxy
 {
     using Moq;
 

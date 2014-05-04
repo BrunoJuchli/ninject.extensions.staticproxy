@@ -1,10 +1,8 @@
-﻿namespace Integration.Tests.InterfaceProxy
+﻿namespace Integration.InterfaceProxy
 {
     using System.Reflection;
 
     using FluentAssertions;
-
-    using Integration.InterfaceProxy;
 
     using Moq;
 

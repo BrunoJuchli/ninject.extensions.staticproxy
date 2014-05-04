@@ -1,7 +1,5 @@
-﻿namespace Integration.Tests.ClassProxy
+﻿namespace Integration.ClassProxy
 {
-    using Integration.ClassProxy;
-
     using Moq;
 
     using Ninject;

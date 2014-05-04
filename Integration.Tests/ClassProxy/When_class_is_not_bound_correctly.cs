@@ -1,10 +1,8 @@
-﻿namespace Integration.Tests.ClassProxy
+﻿namespace Integration.ClassProxy
 {
     using System;
 
     using FluentAssertions;
-
-    using Integration.ClassProxy;
 
     using Ninject;
 

@@ -7,7 +7,7 @@
     <ProjectGuid>{D0CB0454-2A69-4A3A-A56F-987E5F216BFC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Integration.Tests</RootNamespace>
+    <RootNamespace>Integration</RootNamespace>
     <AssemblyName>Integration.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

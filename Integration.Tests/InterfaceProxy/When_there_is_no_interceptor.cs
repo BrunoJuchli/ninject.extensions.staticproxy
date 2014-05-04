@@ -1,10 +1,8 @@
-﻿namespace Integration.Tests.InterfaceProxy
+﻿namespace Integration.InterfaceProxy
 {
     using System;
 
     using FluentAssertions;
-
-    using Integration.InterfaceProxy;
 
     using Ninject;
     using Ninject.Extensions.StaticProxy;

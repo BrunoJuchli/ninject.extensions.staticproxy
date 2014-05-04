@@ -1,8 +1,6 @@
-﻿namespace Integration.Tests.ClassProxy
+﻿namespace Integration.ClassProxy
 {
     using FluentAssertions;
-
-    using Integration.ClassProxy;
 
     using Ninject;
     using Ninject.Extensions.StaticProxy;

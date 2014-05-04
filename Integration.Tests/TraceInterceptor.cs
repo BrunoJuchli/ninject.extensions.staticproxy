@@ -1,4 +1,4 @@
-﻿namespace Integration.Tests
+﻿namespace Integration
 {
     using System.Collections.Generic;
 

@@ -3,7 +3,7 @@
   <metadata minClientVersion="2.8">
     <id>Ninject.Extensions.StaticProxy</id>
     <!-- <version>$version$</version> currently does not seem to work with PCL assemblies... -->
-	  <version>0.1.0</version>
+	  <version>0.1.1</version>
 	  <title>Ninject.Extensions.StaticProxy</title>
     <authors>Bruno Juchli</authors>
     <owners>Bruno Juchli</owners>
@@ -16,7 +16,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
 	  <dependencies>
 		  <dependency id="Portable.Ninject" version="3.2"/>
-		  <dependency id="StaticProxy.Interceptor" version="0.2.0"/>
+		  <dependency id="StaticProxy.Interceptor" version="0.2.1"/>
       <dependency id="StaticProxy.Fody" version ="0.2.0"/>
 	  </dependencies>
   </metadata>

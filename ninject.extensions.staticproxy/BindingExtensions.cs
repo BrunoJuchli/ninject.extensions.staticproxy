@@ -24,7 +24,14 @@
         public static IBindingWhenInNamedWithOrOnSyntax<T> ToProxy<T>(this IBindingToSyntax<T> syntax, Action<IInterceptorBindingSyntax> configure)
             where T : class
         {
-            Type proxyType = InterfaceProxyHelpers.GetImplementationTypeOfInterface(typeof(T));
+            Type interfaceType = typeof(T);
+
+            if (interfaceType == typeof(object))
+            {
+                throw new NotSupportedException("sorry, but IBindingRoot.Bind(typeof(IFoo)).ToProxy() style binding is currently not supported");
+            }
+
+            Type proxyType = InterfaceProxyHelpers.GetImplementationTypeOfInterface(interfaceType);
 
             return syntax.To(proxyType).Intercept(configure);
         }

@@ -32,19 +32,28 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention">
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
     <Reference Include="Ninject.Common">
       <HintPath>..\packages\Portable.Ninject.3.2\lib\net40-client\Ninject.Common.dll</HintPath>
     </Reference>
     <Reference Include="Ninject.Extensions.StaticProxy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Ninject.Extensions.StaticProxy.0.1.0\lib\portable-win+net40+sl50+wp80\Ninject.Extensions.StaticProxy.dll</HintPath>
+      <HintPath>..\packages\Ninject.Extensions.StaticProxy.0.1.1\lib\portable-win+net40+sl50+wp80\Ninject.Extensions.StaticProxy.dll</HintPath>
     </Reference>
     <Reference Include="Ninject.Platform">
       <HintPath>..\packages\Portable.Ninject.3.2\lib\net40-client\Ninject.Platform.dll</HintPath>
     </Reference>
-    <Reference Include="StaticProxy.Interceptor, Version=0.0.0.43, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="StaticProxy.Interceptor, Version=0.0.0.45, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\StaticProxy.Interceptor.0.2.0\lib\portable-win+net40+sl50+wp80\StaticProxy.Interceptor.dll</HintPath>
+      <HintPath>..\packages\StaticProxy.Interceptor.0.2.1\lib\portable-win+net40+sl50+wp80\StaticProxy.Interceptor.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -53,6 +62,10 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Unity.StaticProxyExtension, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.StaticProxy.0.1.0\lib\portable-win+net45+wp80\Unity.StaticProxyExtension.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FakeInterceptor.cs" />

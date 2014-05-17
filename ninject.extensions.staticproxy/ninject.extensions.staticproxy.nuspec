@@ -3,7 +3,7 @@
   <metadata minClientVersion="2.8">
     <id>Ninject.Extensions.StaticProxy</id>
     <!-- <version>$version$</version> currently does not seem to work with PCL assemblies... -->
-	  <version>0.1.1</version>
+	  <version>0.1.2</version>
 	  <title>Ninject.Extensions.StaticProxy</title>
     <authors>Bruno Juchli</authors>
     <owners>Bruno Juchli</owners>
@@ -11,6 +11,7 @@
 	  <iconUrl>https://github.com/BrunoJuchli/ninject.extensions.staticproxy/tree/master/Icons/package_icon.png</iconUrl> 
     <projectUrl>https://github.com/BrunoJuchli/ninject.extensions.staticproxy</projectUrl>
 	  <description>Ninject extension for using StaticProxy.Fody with ninject. This enables proxying on platforms which don't support Dynamic Proxy (like Windows RT, Apple IPhone,...)</description>
+    <releaseNotes>Added .ToAutoFactory() binding support.</releaseNotes>
     <copyright>Copyright Bruno Juchli 2014</copyright>
     <tags>Proxy ILWeaving Fody AOP</tags>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

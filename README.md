@@ -20,7 +20,7 @@ To Install the static proxy weaver from the Nuget Package Manager Console
 ## Usage
 
 ### Setup
- - install the nuget package in the application project
+ - install nuget package Ninject.Extensions.StaticProxy in the application project (composition root)
  - install nuget package StaticProxy.Fody in every project where types should be proxied
  - install nuget package StaticProxy.Interceptor in every project where you want to write interceptors.
 

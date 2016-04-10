@@ -17,7 +17,7 @@
     <dependencies>
         <dependency id="Portable.Ninject" version="3.3.1"/>
         <dependency id="StaticProxy.Interceptor" version="0.3.0.79-pre"/>
-        <dependency id="StaticProxy.Fody" version ="0.3.0.87-pre "/>
+        <dependency id="StaticProxy.Fody" version ="0.3.0.87-pre"/>
     </dependencies>
     </metadata>
     <files>

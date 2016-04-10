@@ -1,12 +1,13 @@
-﻿namespace Ninject.Extensions.StaticProxy
+﻿using System.Reflection;
+
+namespace Ninject.Extensions.StaticProxy
 {
+    using Ninject.Activation;
     using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.Globalization;
     using System.Linq;
-
-    using Ninject.Activation;
 
     internal class DynamicInterceptorCollectionProvider : Provider<IDynamicInterceptorCollection>
     {
@@ -35,7 +36,7 @@
             {
                 Type requestedProxyServiceType = proxyServiceContext.Request.Service;
                 string messageFormat;
-                if (requestedProxyServiceType.IsInterface)
+                if (requestedProxyServiceType.GetTypeInfo().IsInterface)
                 {
                     messageFormat = @"Missing Parameter of type `{0}` on request for `{1}`.
 Please make sure you bind `{1}` using the appropriate way.

@@ -1,5 +1,8 @@
 ﻿namespace Ninject.Extensions.StaticProxy.Factory.Resolution
 {
+    using Ninject.Extensions.StaticProxy.Utilities;
+    using Ninject.Parameters;
+    using Ninject.Planning.Bindings;
     using System;
     using System.Collections.Generic;
     using System.Globalization;
@@ -7,17 +10,13 @@
     using System.Reflection;
     using System.Text;
 
-    using Ninject.Extensions.StaticProxy.Utilities;
-    using Ninject.Parameters;
-    using Ninject.Planning.Bindings;
-
     internal class AttributesInterpreter : IAttributesInterpreter
     {
         public IResolutionParameters Interpret(IInvocation invocation)
         {
             var result = new ResolutionParameters();
 
-            object[] methodAttributes = invocation.Method.GetCustomAttributes(false);
+            object[] methodAttributes = invocation.Method.GetCustomAttributes(false).ToArray();
 
             result.TypeToResolve = DetermineReturnType(methodAttributes, invocation.Method);
 
@@ -29,13 +28,13 @@
             {
                 ParameterInfo parameter = parameters[i];
                 var argumentData = new ArgumentData
-                                       {
-                                           ArgumentValue = invocation.Arguments[i],
-                                           ParameterName = parameter.Name,
-                                           ParameterType = parameter.ParameterType
-                                       };
+                {
+                    ArgumentValue = invocation.Arguments[i],
+                    ParameterName = parameter.Name,
+                    ParameterType = parameter.ParameterType
+                };
 
-                object[] parameterAttributes = parameter.GetCustomAttributes(false);
+                object[] parameterAttributes = parameter.GetCustomAttributes(false).ToArray();
 
                 constraints.AddRange(GetParameterConstraints(parameterAttributes, argumentData));
 

@@ -1,18 +1,20 @@
-﻿namespace Ninject.Extensions.StaticProxy.Factory.Resolution
+﻿using System.Reflection;
+
+namespace Ninject.Extensions.StaticProxy.Factory.Resolution
 {
+    using Ninject.Syntax;
     using System;
     using System.Collections.Generic;
     using System.Linq;
-
-    using Ninject.Syntax;
 
     internal class InstanceResolver : IInstanceResolver
     {
         public object Resolve(IResolutionRoot resolutionRoot, IResolutionParameters resolutionParameters)
         {
             Type type = resolutionParameters.TypeToResolve;
+            TypeInfo typeInfo = type.GetTypeInfo();
 
-            if (type.IsGenericType)
+            if (typeInfo.IsGenericType)
             {
                 var genericType = type.GetGenericTypeDefinition();
                 if (genericType == typeof(IEnumerable<>) ||
@@ -20,11 +22,11 @@
                     genericType == typeof(IList<>) ||
                     genericType == typeof(List<>))
                 {
-                    return this.GetAllAsList(resolutionRoot, type.GetGenericArguments()[0], resolutionParameters);
+                    return this.GetAllAsList(resolutionRoot, typeInfo.GenericTypeArguments[0], resolutionParameters);
                 }
             }
 
-            if (type.IsArray)
+            if (typeInfo.IsArray)
             {
                 var argumentType = type.GetElementType();
                 return this.GetAllAsArray(resolutionRoot, argumentType, resolutionParameters);
@@ -38,9 +40,9 @@
 
         public object GetAllAsList(IResolutionRoot resolutionRoot, Type type, IResolutionParameters resolutionParameters)
         {
-            var listType = typeof(List<>).MakeGenericType(type);
-            var list = listType.GetConstructor(new Type[0]).Invoke(new object[0]);
-            var addMethod = listType.GetMethod("Add");
+            var listType = typeof(List<>).MakeGenericType(type).GetTypeInfo();
+            var list = listType.DeclaredConstructors.Single(x => !x.GetParameters().Any()).Invoke(new object[0]);
+            var addMethod = listType.GetDeclaredMethod("Add");
 
             IEnumerable<object> values = resolutionRoot.GetAll(type, resolutionParameters.Constraint, resolutionParameters.Parameters.ToArray());
 
@@ -56,7 +58,8 @@
         {
             var list = this.GetAllAsList(resolutionRoot, type, resolutionParameters);
             return typeof(Enumerable)
-                .GetMethod("ToArray")
+                .GetTypeInfo()
+                .GetDeclaredMethod("ToArray")
                 .MakeGenericMethod(type)
                 .Invoke(null, new[] { list });
         }

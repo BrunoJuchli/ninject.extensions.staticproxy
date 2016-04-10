@@ -10,7 +10,6 @@
     <iconUrl>https://github.com/BrunoJuchli/ninject.extensions.staticproxy/tree/master/Icons/package_icon.png</iconUrl> 
     <projectUrl>https://github.com/BrunoJuchli/ninject.extensions.staticproxy</projectUrl>
     <description>Ninject extension for using StaticProxy.Fody with ninject. This enables proxying on platforms which don't support Dynamic Proxy (like Windows RT, Apple IPhone,...)</description>
-    <releaseNotes>Added .ToAutoFactory() binding support.</releaseNotes>
     <copyright>Copyright Bruno Juchli 2016</copyright>
     <tags>Proxy ILWeaving Fody AOP ninject</tags>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

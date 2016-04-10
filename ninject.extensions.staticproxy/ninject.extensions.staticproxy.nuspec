@@ -7,11 +7,11 @@
     <authors>Bruno Juchli</authors>
     <owners>Bruno Juchli</owners>
     <developmentDependency>false</developmentDependency>
-    <iconUrl>https://github.com/BrunoJuchli/ninject.extensions.staticproxy/tree/master/Icons/package_icon.png</iconUrl> 
+    <iconUrl>https://github.com/BrunoJuchli/StaticProxy.Fody/blob/master/Icons/package_icon.png</iconUrl> 
     <projectUrl>https://github.com/BrunoJuchli/ninject.extensions.staticproxy</projectUrl>
     <description>Ninject extension for using StaticProxy.Fody with ninject. This enables proxying on platforms which don't support Dynamic Proxy (like Windows RT, Apple IPhone,...)</description>
     <copyright>Copyright Bruno Juchli 2016</copyright>
-    <tags>Proxy ILWeaving Fody AOP ninject</tags>
+    <tags>ninject Proxy Interception ILWeaving Fody AOP</tags>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <releaseNotes>Changed PCL to target Profile259 (.net 4.5, ASP.NET Core 1.0, Win 8, Win Phone 8.1, Win Phone Silverlight 8, Xamarin.Android, Xamarin.iOS, Xamarin.iOS (Classic). Updated to Portable.Ninject 3.3.1. Processing pdb with gitlink so that with "Enable source server support" enabled this assembly is source-steppable. Also see https://github.com/GitTools/GitLink/ </releaseNotes>
     <dependencies>

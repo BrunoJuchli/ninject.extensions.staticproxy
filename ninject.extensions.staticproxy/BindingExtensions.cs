@@ -1,11 +1,9 @@
 ﻿namespace Ninject.Extensions.StaticProxy
 {
-    using System;
-
     using global::StaticProxy.Interceptor.InterfaceProxy;
-
     using Ninject.Extensions.StaticProxy.SyntaxImplementation;
     using Ninject.Syntax;
+    using System;
 
     public static class BindingExtensions
     {

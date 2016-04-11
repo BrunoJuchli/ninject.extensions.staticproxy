@@ -79,6 +79,12 @@
   <ItemGroup>
     <Compile Include="ClassProxy\ForwardToMockInterceptor.cs" />
     <Compile Include="ClassProxy\When_class_is_not_bound_correctly.cs" />
+    <Compile Include="Factory\When_binding_class_to_proxy.cs" />
+    <Compile Include="Factory\When_calling_factory_method_that_has_name_matching_constructor_argument.cs" />
+    <Compile Include="Factory\When_calling_factory_method_that_has_no_arguments.cs" />
+    <Compile Include="Factory\When_calling_factory_method_that_returns_void.cs" />
+    <Compile Include="Factory\When_calling_factory_method_that_specifies_type_to_request_from_container.cs" />
+    <Compile Include="Factory\When_calling_factory_method_which_has_uninterpreted_parameter.cs" />
     <Compile Include="InterfaceProxy\When_there_are_multiple_interceptors.cs" />
     <Compile Include="TraceInterceptor.cs" />
     <Compile Include="InterfaceProxy\When_there_is_no_interceptor.cs" />
@@ -106,6 +112,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

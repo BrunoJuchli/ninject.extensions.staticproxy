@@ -44,6 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassProxy\IInterceptedTarget.cs" />
+    <Compile Include="Factory\IFactoryWithUninterpretedArgument.cs" />
+    <Compile Include="Factory\IFactoryWithNameMatchingConstructorArgument.cs" />
+    <Compile Include="Factory\IFactoryWithoutArguments.cs" />
+    <Compile Include="Factory\IInterfaceReturnType.cs" />
+    <Compile Include="Factory\InheritedArgumentReturnType.cs" />
+    <Compile Include="Factory\IReturnVoidFactory.cs" />
+    <Compile Include="Factory\SingleArgumentReturnType.cs" />
+    <Compile Include="Factory\NoArgumentsReturnType.cs" />
     <Compile Include="InterfaceProxy\INoProxy.cs" />
     <Compile Include="InterfaceProxy\IProxy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -57,6 +65,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ninject.extensions.staticproxy\ninject.extensions.staticproxy.csproj">
+      <Project>{6FCBBBFE-3CE4-48E4-BA99-075A5DCDAA12}</Project>
+      <Name>ninject.extensions.staticproxy</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

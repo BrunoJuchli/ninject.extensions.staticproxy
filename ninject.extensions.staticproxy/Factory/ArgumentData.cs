@@ -4,10 +4,18 @@
 
     public class ArgumentData
     {
-        public object ArgumentValue { get; set; }
+        public ArgumentData(object argumentValue, string parameterName, Type parameterType)
+        {
+            ArgumentValue = argumentValue;
+            ParameterName = parameterName;
+            ParameterType = parameterType;
+        }
 
-        public string ParameterName { get; set; }
 
-        public Type ParameterType { get; set; } 
+        public object ArgumentValue { get; }
+
+        public string ParameterName { get; }
+
+        public Type ParameterType { get; }
     }
 }

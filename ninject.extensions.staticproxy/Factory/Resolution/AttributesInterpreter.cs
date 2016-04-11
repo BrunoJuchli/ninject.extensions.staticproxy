@@ -16,7 +16,7 @@
         {
             var result = new ResolutionParameters();
 
-            object[] methodAttributes = invocation.Method.GetCustomAttributes(false).ToArray();
+            Attribute[] methodAttributes = invocation.Method.GetCustomAttributes(false).ToArray();
 
             result.TypeToResolve = DetermineReturnType(methodAttributes, invocation.Method);
 
@@ -26,25 +26,46 @@
             ParameterInfo[] parameters = invocation.Method.GetParameters();
             for (int i = 0; i < parameters.Length; i++)
             {
-                ParameterInfo parameter = parameters[i];
-                var argumentData = new ArgumentData
-                {
-                    ArgumentValue = invocation.Arguments[i],
-                    ParameterName = parameter.Name,
-                    ParameterType = parameter.ParameterType
-                };
+                var parameterInterpretation = InterpretParameter(parameters[i], invocation.Arguments[i]);
 
-                object[] parameterAttributes = parameter.GetCustomAttributes(false).ToArray();
-
-                constraints.AddRange(GetParameterConstraints(parameterAttributes, argumentData));
-
-                resoutionParameters.AddRange(GetParameters(parameterAttributes, argumentData));
+                constraints.AddRange(parameterInterpretation.Constraints);
+                resoutionParameters.AddRange(parameterInterpretation.ResolutionParameters);
             }
 
+            // todo test combination of constraints
             result.Constraint = CombineConstraints(constraints);
             result.Parameters = resoutionParameters;
 
             return result;
+        }
+
+        private static ParameterInterpretation InterpretParameter(ParameterInfo parameter, object argument)
+        {
+            var argumentData = new ArgumentData(
+                argument,
+                parameter.Name,
+                parameter.ParameterType);
+
+            Attribute[] parameterAttributes = parameter.GetCustomAttributes(false).ToArray();
+
+            var constraints = GetParameterConstraints(parameterAttributes, argumentData).ToList();
+            var resolutionParameters = GetResolutionParameters(parameterAttributes, argumentData).ToList();
+
+            var parameterInterpretation = new ParameterInterpretation(constraints, resolutionParameters);
+            if (!parameterInterpretation.HasInterpretation)
+            {
+                throw CreateMissingInterpretationException(parameter);
+            }
+            return parameterInterpretation;
+        }
+
+        private static InvalidOperationException CreateMissingInterpretationException(ParameterInfo parameter)
+        {
+            string message = string.Format(
+                CultureInfo.InvariantCulture,
+                "parameter '{0}' seems to have no use. Either remove it or add a ParameterAttribute or a ParameterisedConstraintAttribute",
+                parameter);
+            return new InvalidOperationException(message);
         }
 
         private static Func<IBindingMetadata, bool> CombineConstraints(IEnumerable<Func<IBindingMetadata, bool>> constraints)
@@ -85,20 +106,20 @@
             return new InvalidOperationException(sb.ToString());
         }
 
-        private static IEnumerable<Func<IBindingMetadata, bool>> GetMethodConstraints(IEnumerable<object> methodAttributes)
+        private static IEnumerable<Func<IBindingMetadata, bool>> GetMethodConstraints(IEnumerable<Attribute> methodAttributes)
         {
             return methodAttributes
                 .OfType<IConstraintAttribute>()
                 .Select(x => x.Constraint);
         }
 
-        private static IEnumerable<Func<IBindingMetadata, bool>> GetParameterConstraints(IEnumerable<object> parameterAttributes, ArgumentData argument)
+        private static IEnumerable<Func<IBindingMetadata, bool>> GetParameterConstraints(IEnumerable<Attribute> parameterAttributes, ArgumentData argument)
         {
             return parameterAttributes.OfType<IParameterisedConstraintAttribute>()
                 .Select(x => x.CreateConstraint(argument));
         }
 
-        private static IEnumerable<IParameter> GetParameters(IEnumerable<object> parameterAttributes, ArgumentData argument)
+        private static IEnumerable<IParameter> GetResolutionParameters(IEnumerable<Attribute> parameterAttributes, ArgumentData argument)
         {
             return parameterAttributes.OfType<IParameterAttribute>()
                 .SelectMany(x => x.RetrieveParameters(argument));

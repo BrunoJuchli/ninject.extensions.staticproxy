@@ -44,7 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassProxy\IInterceptedTarget.cs" />
+    <Compile Include="Factory\BindingHasMetadata.cs" />
     <Compile Include="Factory\Constants.cs" />
+    <Compile Include="Factory\IFactoryWithMultipleConstraints.cs" />
     <Compile Include="Factory\IFactoryWithNamedByParameterConstraint.cs" />
     <Compile Include="Factory\IFactoryWithNamedConstraint.cs" />
     <Compile Include="Factory\IFactoryWithTypeMatchingConstructorArgument.cs" />
@@ -62,6 +64,10 @@
     <Compile Include="ClassProxy\InterceptedTarget.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Ninject, Version=3.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.Ninject.3.3.1\lib\portable-net4+sl5+wp8+win8+wpa81+monotouch+monoandroid+Xamarin.iOS\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="StaticProxy.Interceptor, Version=0.3.0.79, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\StaticProxy.Interceptor.0.3.0.79-pre\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\StaticProxy.Interceptor.dll</HintPath>
       <Private>True</Private>

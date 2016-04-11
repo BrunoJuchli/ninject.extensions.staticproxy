@@ -32,7 +32,6 @@
                 resoutionParameters.AddRange(parameterInterpretation.ResolutionParameters);
             }
 
-            // todo test combination of constraints
             result.Constraint = CombineConstraints(constraints);
             result.Parameters = resoutionParameters;
 

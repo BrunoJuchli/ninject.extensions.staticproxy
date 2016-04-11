@@ -81,6 +81,7 @@
     <Compile Include="ClassProxy\When_class_is_not_bound_correctly.cs" />
     <Compile Include="Factory\Constraints\Parameterised\When_calling_factory_method_with_name_by_parameter_constraint.cs" />
     <Compile Include="Factory\Constraints\Constant\When_calling_factory_method_with_named_constraint.cs" />
+    <Compile Include="Factory\Constraints\When_calling_factory_method_with_multiple_constraints.cs" />
     <Compile Include="Factory\ResolutionParameters\When_calling_factory_method_that_has_type_matching_constructor_argument.cs" />
     <Compile Include="Factory\When_binding_class_to_proxy.cs" />
     <Compile Include="Factory\ResolutionParameters\When_calling_factory_method_that_has_name_matching_constructor_argument.cs" />

@@ -51,7 +51,7 @@
     <Compile Include="Factory\Resolution\InstanceResolver.cs" />
     <Compile Include="Factory\IParameterAttribute.cs" />
     <Compile Include="Factory\IParameterisedConstraintAttribute.cs" />
-    <Compile Include="Factory\Resolution\FactoryBindingExtensions.cs" />
+    <Compile Include="Factory\FactoryBindingExtensions.cs" />
     <Compile Include="Factory\Resolution\IResolutionParameters.cs" />
     <Compile Include="Factory\IReturnTypeAttribute.cs" />
     <Compile Include="Factory\Resolution\ParameterInterpretation.cs" />

@@ -2,6 +2,7 @@
 using Ninject;
 using Ninject.Extensions.StaticProxy.Factory.Resolution;
 using System;
+using Ninject.Extensions.StaticProxy.Factory;
 using Xunit;
 
 namespace Integration.Factory

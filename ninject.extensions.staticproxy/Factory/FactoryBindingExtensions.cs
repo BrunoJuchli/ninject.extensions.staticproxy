@@ -1,8 +1,9 @@
-﻿using Ninject.Syntax;
+﻿using Ninject.Extensions.StaticProxy.Factory.Resolution;
+using Ninject.Syntax;
 using System;
 using System.Reflection;
 
-namespace Ninject.Extensions.StaticProxy.Factory.Resolution
+namespace Ninject.Extensions.StaticProxy.Factory
 {
     public static class FactoryBindingExtensions
     {

@@ -1,6 +1,6 @@
 ﻿using FluentAssertions;
 using Ninject;
-using Ninject.Extensions.StaticProxy.Factory.Resolution;
+using Ninject.Extensions.StaticProxy.Factory;
 using Xunit;
 
 namespace Integration.Factory

@@ -1,5 +1,6 @@
 ﻿using FluentAssertions;
 using Ninject;
+using Ninject.Extensions.StaticProxy.Factory;
 using Ninject.Extensions.StaticProxy.Factory.Resolution;
 using Xunit;
 

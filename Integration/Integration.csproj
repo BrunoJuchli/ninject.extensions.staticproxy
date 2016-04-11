@@ -44,10 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassProxy\IInterceptedTarget.cs" />
-    <Compile Include="Factory\IFactoryWithUninterpretedArgument.cs" />
+    <Compile Include="Factory\Constants.cs" />
+    <Compile Include="Factory\IFactoryWithNamedByParameterConstraint.cs" />
+    <Compile Include="Factory\IFactoryWithNamedConstraint.cs" />
+    <Compile Include="Factory\IFactoryWithTypeMatchingConstructorArgument.cs" />
+    <Compile Include="Factory\IFactoryWithUnattributedArgument.cs" />
     <Compile Include="Factory\IFactoryWithNameMatchingConstructorArgument.cs" />
     <Compile Include="Factory\IFactoryWithoutArguments.cs" />
-    <Compile Include="Factory\IInterfaceReturnType.cs" />
+    <Compile Include="Factory\IFactoryWithReturnTypeSpecification.cs" />
     <Compile Include="Factory\InheritedArgumentReturnType.cs" />
     <Compile Include="Factory\IReturnVoidFactory.cs" />
     <Compile Include="Factory\SingleArgumentReturnType.cs" />

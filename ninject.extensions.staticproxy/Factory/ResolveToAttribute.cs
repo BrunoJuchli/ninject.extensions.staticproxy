@@ -2,9 +2,9 @@
 {
     using System;
 
-    public sealed class ImplementedByAttribute : ReturnTypeAttribute
+    public sealed class ResolveToAttribute : ReturnTypeAttribute
     {
-        public ImplementedByAttribute(Type implementationType)
+        public ResolveToAttribute(Type implementationType)
         {
             this.ReturnType = implementationType;
         }

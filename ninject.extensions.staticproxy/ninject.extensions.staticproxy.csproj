@@ -39,8 +39,9 @@
     <Compile Include="BindingExtensions.cs" />
     <Compile Include="Factory\ArgumentData.cs" />
     <Compile Include="Factory\FactoryModule.cs" />
-    <Compile Include="Factory\ImplementedByAttribute.cs" />
     <Compile Include="Factory\NamedConstraintAttribute.cs" />
+    <Compile Include="Factory\ResolveToAttribute.cs" />
+    <Compile Include="Factory\NamedConstraintByParameterAttribute.cs" />
     <Compile Include="Factory\NamedConstructorArgumentAttribute.cs" />
     <Compile Include="Factory\Resolution\AttributesInterpreter.cs" />
     <Compile Include="Factory\Resolution\FactoryInterceptor.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="Factory\IReturnTypeAttribute.cs" />
     <Compile Include="Factory\Resolution\ParameterInterpretation.cs" />
     <Compile Include="Factory\Resolution\ResolutionParameters.cs" />
+    <Compile Include="Factory\TypeMatchingConstructorArgumentAttribute.cs" />
     <Compile Include="InterceptorContainer\ConstantInterceptorContainer.cs" />
     <Compile Include="DynamicInterceptorCollectionProvider.cs" />
     <Compile Include="DynamicInterceptorParameter.cs" />

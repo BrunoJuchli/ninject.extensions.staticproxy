@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ninject.extensions.staticproxy", "ninject.extensions.staticproxy\ninject.extensions.staticproxy.csproj", "{6FCBBBFE-3CE4-48E4-BA99-075A5DCDAA12}"
 EndProject
@@ -10,6 +10,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Integration.Tests", "Integration.Tests\Integration.Tests.csproj", "{D0CB0454-2A69-4A3A-A56F-987E5F216BFC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ninject.Extensions.StaticProxy.Tests", "Ninject.Extensions.StaticProxy.Tests\Ninject.Extensions.StaticProxy.Tests.csproj", "{0E6ABEA4-424C-4EAB-861B-B55508D68742}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{20119F80-83D7-47AD-A2E9-EB077A652D71}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

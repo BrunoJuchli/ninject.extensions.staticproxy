@@ -7,6 +7,8 @@ namespace Integration.Factory
     {
         SingleArgumentReturnType Create([NamedConstructorArgument] string value);
 
-        InheritedArgumentReturnType CreateWithInheritedArgument([NamedConstructorArgument(true)] string value);
+        InheritedArgumentReturnType CreatedWithDependencyAndNotInheritedArgument([NamedConstructorArgument] string value);
+
+        InheritedArgumentReturnType CreateWithDependencyAndInheritedArgument([NamedConstructorArgument(true)] string value);
     }
 }

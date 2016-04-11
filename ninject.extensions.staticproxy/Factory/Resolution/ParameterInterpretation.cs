@@ -2,7 +2,6 @@
 using Ninject.Planning.Bindings;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Ninject.Extensions.StaticProxy.Factory.Resolution
 {
@@ -29,7 +28,5 @@ namespace Ninject.Extensions.StaticProxy.Factory.Resolution
         public IReadOnlyCollection<Func<IBindingMetadata, bool>> Constraints { get; }
 
         public IReadOnlyCollection<IParameter> ResolutionParameters { get; }
-
-        public bool HasInterpretation => Constraints.Any() || ResolutionParameters.Any();
     }
 }

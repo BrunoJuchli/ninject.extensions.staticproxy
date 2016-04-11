@@ -1,15 +1,20 @@
-﻿namespace Ninject.Extensions.StaticProxy.Factory
+﻿using Ninject.Planning.Bindings;
+using System;
+
+namespace Ninject.Extensions.StaticProxy.Factory
 {
-    using Ninject.Planning.Bindings;
-    using System;
-
-    public sealed class NamedConstraintAttribute : ParameterisedConstraintAttribute
+    public sealed class NamedConstraintAttribute : ConstraintAttribute
     {
-        public override Func<IBindingMetadata, bool> CreateConstraint(ArgumentData argument)
+        public NamedConstraintAttribute(string name)
         {
-            var name = (string)argument.ArgumentValue;
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                throw new ArgumentOutOfRangeException(nameof(name));
+            }
 
-            return x => x.Name == name;
+            this.Constraint = x => x.Name == name;
         }
+
+        public override Func<IBindingMetadata, bool> Constraint { get; }
     }
 }

@@ -51,22 +51,17 @@
             var constraints = GetParameterConstraints(parameterAttributes, argumentData).ToList();
             var resolutionParameters = GetResolutionParameters(parameterAttributes, argumentData).ToList();
 
-            var parameterInterpretation = new ParameterInterpretation(constraints, resolutionParameters);
-            if (!parameterInterpretation.HasInterpretation)
+            // by default, treat it like a type matching argument
+            if (!constraints.Any() && !resolutionParameters.Any())
             {
-                throw CreateMissingInterpretationException(parameter);
+                resolutionParameters.Add(
+                    TypeMatchingConstructorArgumentAttribute
+                        .CreateTypeMatchingConstructorArgument(argumentData, false));
             }
-            return parameterInterpretation;
+
+            return new ParameterInterpretation(constraints, resolutionParameters);
         }
 
-        private static InvalidOperationException CreateMissingInterpretationException(ParameterInfo parameter)
-        {
-            string message = string.Format(
-                CultureInfo.InvariantCulture,
-                "parameter '{0}' seems to have no use. Either remove it or add a ParameterAttribute or a ParameterisedConstraintAttribute",
-                parameter);
-            return new InvalidOperationException(message);
-        }
 
         private static Func<IBindingMetadata, bool> CombineConstraints(IEnumerable<Func<IBindingMetadata, bool>> constraints)
         {

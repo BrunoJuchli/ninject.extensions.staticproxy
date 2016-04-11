@@ -3,8 +3,6 @@
     using Ninject.Planning.Bindings;
     using System;
 
-    // todo implement example and create integration test
-
     /// <summary>
     /// <c>Used to create constraints for the resolution.</c>
     /// Attributes implementing this interface need to specified with <c>AttributeTargets.Method</c>.

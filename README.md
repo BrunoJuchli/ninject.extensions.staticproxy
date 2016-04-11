@@ -6,8 +6,7 @@
 
 Proxying for platforms which don't support dynamic code emitting (Windows Store Applications, Xamarin.iOS...). Based on [StaticProxy.Fody](https://github.com/BrunoJuchli/StaticProxy.Fody/)
 
-Future Features:
- - `.ToFactory()` binding for auto-implemented factories (as known from Ninject.Extensions.Factory).
+Features `.ToFactory()` binding for auto-implemented factories (as known from Ninject.Extensions.Factory) - see [Wiki](https://github.com/BrunoJuchli/ninject.extensions.staticproxy/wiki/Factory)
 
 ## Nuget
 

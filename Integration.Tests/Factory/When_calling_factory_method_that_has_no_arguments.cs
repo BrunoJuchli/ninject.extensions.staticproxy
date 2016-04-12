@@ -22,6 +22,5 @@ namespace Integration.Factory
 
             actualInstance.Should().BeSameAs(expectedInstance);
         }
-
     }
 }

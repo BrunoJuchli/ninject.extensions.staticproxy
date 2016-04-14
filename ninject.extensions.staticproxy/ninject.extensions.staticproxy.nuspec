@@ -16,8 +16,8 @@
     <releaseNotes>Added ToFactory() binding. Changed PCL to target Profile259 (.net 4.5, ASP.NET Core 1.0, Win 8, Win Phone 8.1, Win Phone Silverlight 8, Xamarin.Android, Xamarin.iOS, Xamarin.iOS (Classic). Updated to Portable.Ninject 3.3.1. Processing pdb with gitlink so that with "Enable source server support" enabled this assembly is source-steppable. Also see https://github.com/GitTools/GitLink/ </releaseNotes>
     <dependencies>
         <dependency id="Portable.Ninject" version="3.3.1"/>
-        <dependency id="StaticProxy.Interceptor" version="0.3.0.79-pre"/>
-        <dependency id="StaticProxy.Fody" version ="0.3.0.87-pre"/>
+        <dependency id="StaticProxy.Interceptor" version="0.3.0"/>
+        <dependency id="StaticProxy.Fody" version ="0.3.0"/>
     </dependencies>
     </metadata>
     <files>

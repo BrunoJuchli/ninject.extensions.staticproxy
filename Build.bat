@@ -13,11 +13,16 @@ SET MSBuildFileLogParameters=/fl1 /flp1:Summary;Verbosity=normal;LogFile=%BuildL
 SET MSBuildErrorFileLogParameters=/fl2 /flp2:NoSummary;ErrorsOnly;LogFile=%BuildLogFile%.errors.log
 SET MSBuildWarningFileLogParameters=/fl3 /flp3:NoSummary;WarningsOnly;LogFile=%BuildLogFile%.warnings.log
 
+nuget restore %BuildFile%
+IF ERRORLEVEL 1 GOTO Failed
 
 "%MSBuildPath%\MSBUILD.EXE" %BuildFile% /t:%UserTarget% %MSBuildParameters% %MSBuildFileLogParameters% %MSBuildErrorFileLogParameters% %MSBuildWarningFileLogParameters%
 IF ERRORLEVEL 1 GOTO Failed
 
 gitlink.exe . -f %BuildFile% -ignore Integration,Integration.Tests,Ninject.Extensions.StaticProxy.Tests
+IF ERRORLEVEL 1 GOTO Failed
+
+nuget pack ".\ninject.extensions.staticproxy\ninject.extensions.staticproxy.csproj" -Version "0.2.1.1"
 IF ERRORLEVEL 1 GOTO Failed
 
 CALL %PrintSuccessful%
